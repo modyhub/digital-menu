@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style> 
+     #testing::after{
+            content: '';
+            color: white;
+            position: absolute;  
+            left: 0; 
+            top: 40px;
+            transform: translateY(-50%) rotate(180deg); /* قلب المثلث */
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 80px solid #ff3131; /* نفس اللون */
+        }  
+        #testing::before{
+            content: "99.99 tl";
+            position: absolute;
+            left: 15px;
+            top: 7px;
+            z-index: 10;
+            color: white;
+            font-size: larger;
+            font-weight: bold; 
+        } 
+    </style>
+</head>
+<body class="m-0 p-0">
+    <!-- Navbar -->
+    <div>
+        <!-- Navbar Container (Fixed) -->
+        <div class="bg-red-500 text-stone-50 font-bold h-16 pt-2 text-2xl flex items-center justify-between px-6 md:px-10 fixed w-full top-0 z-50">
+            <!-- Logo -->
+            <div class="logo">
+                <h1 class="text-xl font-bold">Logo</h1>
+            </div>
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#carouselExampleSlidesOnly" class="hover:text-gray-300">Ana Sayfa</a></li>
+                <li><a href="index2.html" class="hover:text-gray-300">Menu</a></li>
+                <li><a href="#thirdsection" class="hover:text-gray-300">Kampanyalar</a></li>
+                <li><a href="#footersection" class="hover:text-gray-300">İletişim</a></li>
+            </ul>
+            <!-- Burger Menu Button -->
+            <button id="burger-btn" class="text-3xl md:hidden focus:outline-none">
+                &#9776;
+            </button>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-red-500 md:hidden transform -translate-y-full transition-transform duration-300 ease-in-out fixed top-16 w-full z-40">
+            <ul class="flex flex-col space-y-2 p-4 font-bold text-stone-50">
+                <li><a href="#carouselExampleSlidesOnly" class="hover:text-gray-300">Ana Sayfa</a></li>
+                <li><a href="index2.html" class="hover:text-gray-300">Menu</a></li>
+                <li><a href="#thirdsection" class="hover:text-gray-300">Kampanyalar</a></li>
+                <li><a href="#footersection" class="hover:text-gray-300">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Carousel with Hero Section -->
+    <div class="flex flex-col lg:flex-row justify-around items-center mx-4 mt-44 p-12 mb-12 space-y-8 lg:space-y-0">
+        <div id="leftside" class="m-4 text-center lg:text-left lg:place-items-start">
+            <h1 class="text-red-500 text-3xl sm:text-4xl lg:text-5xl font-bold">
+                Lezzetin yeni adresi: Lezzet Durağı!
+            </h1>
+            <p class="text-red-500 text-xl sm:text-2xl lg:text-3xl mt-4 font-bold lg:text-left">
+                En taze malzemelerle hazırlanan benzersiz lezzetler, sevdiklerinizle paylaşmanız için burada!
+            </p>
+            <a href="#" class="btn bg-red-500 text-white px-6 py-3 mt-8 text-lg sm:text-xl lg:text-2xl hover:text-black hover:bg-red-600 font-bold">
+                yemekler
+            </a>
+        </div>
+        <div id="rightside" class="flex justify-center lg:mr-24">
+            <img src="Shawarma-pana.png" class="w-84 sm:w-72 lg:w-96" alt="">
+        </div>
+    </div>
+    
+    <!-- second section -->
+    <h1 id="secondsection" class="flex justify-center text-center p-12 text-5xl max-lg:text-4xl max-md:text-3xl max-md:m-0 text-red-500 m-24 mt-36 font-bold">Menümüzü İnceleyin ve Şimdi Sipariş Verin!</h1>
+
+<!-- cards to menu -->
+<div class="flex justify-center ">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mx-auto mb-24">
+        <div class="card" style="width: 18rem; box-shadow: none;">
+            <img src="doner.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title font-bold text-xl ">yemeklerimiz</h5>
+                <p class="card-text font-bold">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="index2.html" data-info="yemek" onclick="myFunction(this)" class="btn bg-red-500 font-bold text-white p-4">Yemekler</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; box-shadow: none;">
+            <img src="tatli.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title font-bold text-xl ">tatlilarimiz</h5>
+                <p class="card-text font-bold">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="index2.html" data-info="tatli" onclick="myFunction(this)" class="btn bg-red-500 font-bold text-white p-4">Tatli</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; box-shadow: none;">
+            <img src="icecek.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title font-bold text-xl ">icecekler</h5>
+                <p class="card-text font-bold">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="index2.html" data-info="icecekler" onclick="myFunction(this)" class="btn bg-red-500 font-bold text-white p-4">İçecekler</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; box-shadow: none;">
+            <img src="salata.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title font-bold text-xl ">salatalar</h5>
+                <p class="card-text font-bold">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="index2.html" data-info="salata" onclick="myFunction(this)" class="btn bg-red-500 font-bold text-white p-4">Salata</a>
+            </div>
+        </div> 
+    </div>
+</div>
+
+    <!-- packages section -->
+    <h1 id="thirdsection" class="flex justify-center text-center p-6 text-5xl max-lg:text-4xl max-md:text-3xl max-sm:text-2xl text-red-500 font-bold mb-24">
+        Lezzet Dolu Kampanyalar!
+    </h1>
+    <div class="flex flex-wrap justify-center gap-8 px-4 max-w-screen-xl mx-auto mb-24">
+        <div class="card w-full sm:w-2/3 md:w-1/3 lg:w-1/4 shadow-lg">
+            <img src="doner.png" class="card-img-top" alt="Doner Image">
+            <div class="card-body text-center">
+                <p class="card-text text-2xl font-bold text-red-500">1 doner + tatli + icecek</p>
+                <h2 class="font-bold text-4xl">
+                    <del style="text-decoration-color: firebrick">120</del>
+                    <span class="text-red-500">tl</span>
+                </h2>
+            </div>
+        </div>
+        <div class="card w-full sm:w-2/3 md:w-1/3 lg:w-1/4 shadow-lg">
+            <img src="doner.png" class="card-img-top" alt="Doner Image">
+            <div class="card-body text-center">
+                <p class="card-text text-2xl font-bold text-red-500">1 doner + tatli + icecek</p>
+                <h2 class="font-bold text-4xl">
+                    <del style="text-decoration-color: firebrick">120</del>
+                    <span class="text-red-500">tl</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer section -->
+    <div id="footersection" class="p-12 bg-red-500 text-white flex flex-wrap justify-between font-bold max-lg:text-center">
+        <!-- Left Section -->
+        <div class="w-full lg:w-2/3 pr-4 mb-8 lg:mb-0">
+            <h1 class="text-4xl md:text-5xl pb-8">Lezzet Durağı</h1>
+            <h1 class="text-2xl md:text-3xl pb-8">
+                En lezzetli yemekler, sıcak bir ortamda sizleri bekliyor
+            </h1>
+            <div id="icon" class="flex items-start pb-2">
+                <img src="location.png" class="pr-4" width="36" alt="Location Icon">
+                <h1 class="text-lg md:text-2xl">Bağıbaşı Mahallesi, Kırşehir, Türkiye</h1>
+            </div>
+            <div id="icon" class="flex items-start pb-2">
+                <img src="telephone.png" class="pr-4" width="36" alt="Telephone Icon">
+                <h1 class="text-lg md:text-2xl">+90 555 123 4567</h1>
+            </div>
+            <div id="icon" class="flex items-start pb-2">
+                <img src="email.png" class="pr-4" width="36" alt="Email Icon">
+                <h1 class="text-lg md:text-2xl">info@lezzetduragi.com</h1>
+            </div>
+        </div>
+    
+        <!-- Right Section -->
+        <div class="w-full lg:w-1/3">
+            <h1 class="text-xl md:text-2xl pb-2">Menüye bağlantılar:</h1>
+            <h1 class="text-lg md:text-2xl cursor-pointer hover:text-gray-300">Ana Sayfa</h1>
+            <h1 class="text-lg md:text-2xl cursor-pointer hover:text-gray-300">Menü</h1>
+            <h1 class="text-lg md:text-2xl cursor-pointer hover:text-gray-300">Kampanyalar</h1>
+            <h1 class="text-lg md:text-2xl pb-4 cursor-pointer hover:text-gray-300">İletişim</h1>
+            <div class="flex gap-4 justify-center lg:justify-start">
+                <img src="social-media.png" width="32" alt="Social Media Icon" class="cursor-pointer">
+                <img src="social-media (1).png" width="32" alt="Social Media Icon" class="cursor-pointer">
+                <img src="instagram.png" width="32" alt="Instagram Icon" class="cursor-pointer">
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+const burgerBtn = document.getElementById("burger-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+burgerBtn.addEventListener("click", () => {
+    if (mobileMenu.classList.contains("hidden")) {
+        // Menüyü göster
+        mobileMenu.classList.remove("hidden");
+        mobileMenu.classList.remove("-translate-y-full");
+        mobileMenu.classList.add("translate-y-0");
+    } else {
+        // Menüyü gizle
+        mobileMenu.classList.add("-translate-y-full");
+        mobileMenu.classList.remove("translate-y-0");
+        setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+        }, 300); // Animasyon süresi (300ms) kadar bekle
+    }
+});
+function myFunction(element) {
+    // Get the data-info attribute of the clicked element
+    var yemektype = element.getAttribute('data-info');
+    
+    // Log the value to the console
+    if(yemektype == yemek){
+        
+    }
+}
+
+ 
+</script>
+</html>

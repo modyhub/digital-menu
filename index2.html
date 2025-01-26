@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .active:active{
+            color: red;
+        }
+        .active:hover{
+            color: white; 
+            background-color: white;
+            
+        }
+    </style>
+</head>
+<body class="m-0 p-0">
+  <!-- Navbar -->
+  <div>
+    <!-- Navbar Container (Fixed) -->
+    <div class="bg-red-500 text-stone-50 font-bold h-16 pt-2 text-2xl flex items-center justify-between px-6 md:px-10 fixed w-full top-0 z-50">
+        <!-- Logo -->
+        <div class="logo">
+            <h1 class="text-xl font-bold">Logo</h1>
+        </div>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-8">
+            <li><a href="index.html" class="hover:text-gray-300">Ana Sayfa</a></li>
+            <li><a href="index2.html" class="hover:text-gray-300">Menu</a></li>
+            <li><a href="#index" class="hover:text-gray-300">Kampanyalar</a></li>
+            <li><a href="#footersection" class="hover:text-gray-300">İletişim</a></li>
+        </ul>
+        <!-- Burger Menu Button -->
+        <button id="burger-btn" class="text-3xl md:hidden focus:outline-none">
+            &#9776;
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-red-500 md:hidden transform -translate-y-full transition-transform duration-300 ease-in-out fixed top-16 w-full z-40">
+        <ul class="flex flex-col space-y-2 p-4 font-bold text-stone-50">
+            <li><a href="index.html" class="hover:text-gray-300">Ana Sayfa</a></li>
+            <li><a href="index2.html" class="hover:text-gray-300">Menu</a></li>
+            <li><a href="index.html" class="hover:text-gray-300">Kampanyalar</a></li>
+            <li><a href="#footersection" class="hover:text-gray-300">İletişim</a></li>
+        </ul>
+    </div>
+</div>
+    <!-- menu main card -->
+    <div class="mt-16">
+    <div class="flex justify-center ">
+        <div class="m-4 sm:m-8 font-bold text-lg sm:text-2xl">
+            <ul class="flex flex-wrap justify-center gap-4 sm:gap-8 p-4 sm:p-8 rounded bg-red-500 text-white">
+                <li id="active" onclick="showContent()">
+                    <a href="#" class="hover:text-red-500 px-4 py-2 hover:bg-white rounded hover:transition block">
+                        ana yemek
+                    </a>
+                </li>
+                <li id="tatli" onclick="cardtatl()">
+                    <a href="#" class="hover:text-red-500 px-4 py-2 hover:bg-white rounded hover:transition block">
+                        tatlı
+                    </a>
+                </li>
+                <li id="salata" onclick="cardicec()">
+                    <a href="#" class="hover:text-red-500 px-4 py-2 hover:bg-white rounded hover:transition block">
+                        içecekler
+                    </a>
+                </li>
+                <li id="icecek" onclick="cardSal()">
+                    <a href="#" class="hover:text-red-500 px-4 py-2 hover:bg-white rounded hover:transition block">
+                        salata
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>  
+</div>
+    
+
+    <!-- card menu -->
+    <div class="cardClass" style="display: block;"></div>
+    <div class="cardClassTatli" style="display: none;"></div>
+    <div class="cardClassSalata" style="display: none;"></div>
+    <div class="cardClassIcecekler" style="display: none;"></div>
+
+    <!-- footer section -->
+    <div id="footersection" class="p-12 bg-red-500 text-white flex flex-wrap justify-between font-bold max-lg:text-center">
+        <!-- Left Section -->
+        <div class="w-full lg:w-2/3 pr-4 mb-8 lg:mb-0">
+            <h1 class="text-4xl md:text-5xl pb-8">Lezzet Durağı</h1>
+            <h1 class="text-2xl md:text-3xl pb-8">
+                En lezzetli yemekler, sıcak bir ortamda sizleri bekliyor
+            </h1>
+            <div id="icon" class="flex items-start pb-2">
+                <img src="location.png" class="pr-4" width="36" alt="Location Icon">
+                <h1 class="text-lg md:text-2xl">Bağıbaşı Mahallesi, Kırşehir, Türkiye</h1>
+            </div>
+            <div id="icon" class="flex items-start pb-2">
+                <img src="telephone.png" class="pr-4" width="36" alt="Telephone Icon">
+                <h1 class="text-lg md:text-2xl">+90 555 123 4567</h1>
+            </div>
+            <div id="icon" class="flex items-start pb-2">
+                <img src="email.png" class="pr-4" width="36" alt="Email Icon">
+                <h1 class="text-lg md:text-2xl">info@lezzetduragi.com</h1>
+            </div>
+        </div>
+    
+        <!-- Right Section -->
+        <div class="w-full lg:w-1/3">
+            <h1 class="text-xl md:text-2xl pb-2">Menüye bağlantılar:</h1>
+            <h1 class="text-lg md:text-2xl cursor-pointer hover:text-gray-300">Ana Sayfa</h1>
+            <h1 class="text-lg md:text-2xl cursor-pointer hover:text-gray-300">Menü</h1>
+            <h1 class="text-lg md:text-2xl cursor-pointer hover:text-gray-300">Kampanyalar</h1>
+            <h1 class="text-lg md:text-2xl pb-4 cursor-pointer hover:text-gray-300">İletişim</h1>
+            <div class="flex gap-4 justify-center lg:justify-start">
+                <img src="social-media.png" width="32" alt="Social Media Icon" class="cursor-pointer">
+                <img src="social-media (1).png" width="32" alt="Social Media Icon" class="cursor-pointer">
+                <img src="instagram.png" width="32" alt="Instagram Icon" class="cursor-pointer">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</html>
